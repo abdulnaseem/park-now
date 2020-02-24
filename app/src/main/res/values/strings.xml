@@ -15,10 +15,12 @@
     <string name="endTime">Leaving Time</string>
     <string name="destination">Destination</string>
     <string name="price">Total Price:</string>
-    <string name="vehicle">Vehicle Details</string>
+    <string name="vehicle">Vehicle Registration</string>
     <string name="payment">Payment Details</string>
     <string name="total_duration">Total Duration</string>
     <string name="total_price">Total Price</string>
+    <string name="sign_in"><u>Sign in</u></string>
+    <string name="sign_up"><u>Sign up</u></string>
 
 
 

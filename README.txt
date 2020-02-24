@@ -4,4 +4,10 @@
 			  - show the transition of activities from main to booking
 			  - screens --> main | info | booking
 			  - create ParkingSpacesBooking database
+			  - add date and time options 
+			  - use logic to calculate the duration of date and time
+			  - calculate the total cost from duration of booking
+ --> Integration made easy
+ -->                      - create the GUI of the navigation drawer
+			  - add the required menus
   

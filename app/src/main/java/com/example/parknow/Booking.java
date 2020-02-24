@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -24,18 +25,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class Booking<hour, min> extends AppCompatActivity {
+public class Booking extends AppCompatActivity {
 
     BookingDatabase myDb;
 
-    Button selectDate;
-    TextView showDate;
-    Button leavingDate;
-    TextView showLeavDate;
-    Button selArrTime;
-    TextView strtTime;
-    Button selLeavTime;
-    TextView timeEnd;
+    EditText selectDate;
+    EditText leavingDate;
+    EditText selArrTime;
+    EditText selLeavTime;
     TextView duration;
     TextView price;
 
@@ -53,13 +50,6 @@ public class Booking<hour, min> extends AppCompatActivity {
     long diffMinutes;
     long diffHours;
 
-    LocalDateTime strtDate;
-    LocalDateTime endDate;
-    Date date;
-
-
-    int curTime;
-
     protected void onCreate(Bundle savedInstanceState){
         setTheme(R.style.SplashTheme);
         super.onCreate(savedInstanceState);
@@ -72,14 +62,10 @@ public class Booking<hour, min> extends AppCompatActivity {
 
         myDb = new BookingDatabase(this);
 
-        selectDate = (Button) findViewById(R.id.dateSelect);
-        showDate = (TextView) findViewById(R.id.dateStrt);
-        leavingDate = (Button) findViewById(R.id.leavDate);
-        showLeavDate = (TextView) findViewById(R.id.dateLeav);
-        selArrTime = (Button) findViewById(R.id.strtArriv);
-        strtTime = (TextView) findViewById(R.id.timeStrt);
-        selLeavTime = (Button) findViewById(R.id.endLeav);
-        timeEnd = (TextView) findViewById(R.id.timeEnd);
+        selectDate = (EditText) findViewById(R.id.dateSelect);
+        leavingDate = (EditText) findViewById(R.id.leavDate);
+        selArrTime = (EditText) findViewById(R.id.strtArriv);
+        selLeavTime = (EditText) findViewById(R.id.endLeav);
         duration = (TextView) findViewById(R.id.duration);
         price = (TextView) findViewById(R.id.price);
 
@@ -113,7 +99,7 @@ public class Booking<hour, min> extends AppCompatActivity {
                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                         c.set(nYear, nMonth, nDay);
                         dateString1 = sdf.format(c.getTime());
-                        showDate.setText(dateString1);
+                        selectDate.setText(dateString1);
                     }
                 }, year, month, day);
                 datePickerDialog.show();
@@ -135,18 +121,13 @@ public class Booking<hour, min> extends AppCompatActivity {
                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                         c.set(nYear, nMonth, nDay);
                         dateString2 = sdf.format(c.getTime());
-                        showLeavDate.setText(dateString2);
+                        leavingDate.setText(dateString2);
 
                     }
                 }, year, month, day);
                 datePickerDialog.show();
             }
         });
-
-
-
-
-
 
 
         selArrTime.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +145,7 @@ public class Booking<hour, min> extends AppCompatActivity {
 
                         start_time = String.format("%02d:%02d", hour, min);
                         Log.d("START: ", String.valueOf(start_time));
-                        strtTime.setText(start_time);
+                        selArrTime.setText(start_time);
 
                     }
                 };
@@ -192,13 +173,10 @@ public class Booking<hour, min> extends AppCompatActivity {
                         String begin_date_time = dateString1 + " " + start_time;
                         String fin_date_time = dateString2 + " " + end_time;
 
-                        Log.d("DATE/TIME", begin_date_time);
-                        Log.d("DATE/TIME", fin_date_time);
+                        //Log.d("DATE/TIME", begin_date_time);
+                        //Log.d("DATE/TIME", fin_date_time);
 
-                        timeEnd.setText(end_time);
-
-                        int dur_hour = hourFinal-hour;
-                        int dur_min = minFinal-min;
+                        selLeavTime.setText(end_time);
 
                         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
@@ -221,7 +199,7 @@ public class Booking<hour, min> extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        Log.d("DURATION ", String.valueOf(dur_hour));//TEST PRINT
+                        //Log.d("DURATION ", String.valueOf(diffHours));//TEST PRINT
                         //duration.setText(String.valueOf(dur_hour)+"h"+" "+ String.valueOf(dur_min)+"m");
 
                         double pricePerHour = diffHours*1.2;
@@ -240,12 +218,6 @@ public class Booking<hour, min> extends AppCompatActivity {
 
             }
         });
-        /*int dur = hour-hourFinal;
-        String finHour = String.valueOf(dur);
-        Log.d("hour duration: ", finHour);
-        Log.d("OUTSIDE: ", String.valueOf(hour));*/
-
-
 
     }
 

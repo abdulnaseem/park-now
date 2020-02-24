@@ -59,7 +59,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="5dp"
             android:layout_below="@id/layout1">
-            <Button
+            <EditText
                 android:id="@+id/dateSelect"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -68,45 +68,24 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
                 android:text="@string/dateSelect"
-                android:textSize="10dp"
-                android:textColor="#000000"
-                android:backgroundTint="#FFFFFF"/>
-            <Button
-                android:id="@+id/strtArriv"
+                android:textSize="18dp"
+                android:backgroundTint="#FFA500"
+                android:editable="false"
+                android:focusableInTouchMode="false"/>
+            <EditText
+                android:id="@+id/leavDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="5dp"
-                android:text="@string/strtTime"
-                android:textSize="10dp"
+                android:text="@string/dateLeaving"
+                android:textSize="18dp"
                 android:textColor="#000000"
-                android:backgroundTint="#FFFFFF"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/starting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layout2">
-            <TextView
-                android:id="@+id/dateStrt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:id="@+id/timeStrt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
+                android:backgroundTint="#FFA500"
+                android:editable="false"
+                android:focusableInTouchMode="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -115,64 +94,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/starting">
-            <Button
-                android:id="@+id/leavDate"
+            android:layout_below="@id/layout2">
+            <EditText
+                android:id="@+id/strtArriv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
-                android:text="@string/dateLeaving"
-                android:textSize="10dp"
+                android:text="@string/strtTime"
+                android:textSize="18dp"
                 android:textColor="#000000"
-                android:backgroundTint="#FFFFFF"/>
-            <Button
+                android:backgroundTint="#FFA500"
+                android:editable="false"
+                android:focusableInTouchMode="false"/>
+            <EditText
                 android:id="@+id/endLeav"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="5dp"
                 android:text="@string/endTime"
-                android:textSize="10dp"
+                android:textSize="18dp"
                 android:textColor="#000000"
-                android:backgroundTint="#FFFFFF"/>
+                android:backgroundTint="#FFA500"
+                android:editable="false"
+                android:focusableInTouchMode="false"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/layout3">
-            <TextView
-                android:id="@+id/dateLeav"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:id="@+id/timeEnd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textSize="20sp"
-                android:textColor="#000000"/>
-        </LinearLayout>
         <RelativeLayout
             android:id="@+id/layout_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout3"
+            android:layout_below="@id/layout2"
             android:orientation="horizontal"
             android:background="#F5F5F5"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="42dp"
             android:elevation="5dp">
             <TextView
                 android:id="@+id/duration"

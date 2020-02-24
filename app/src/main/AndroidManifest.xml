@@ -27,7 +27,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Booking">
+        <activity android:name=".Booking"
+                  android:windowSoftInputMode="stateAlwaysHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.Booking" />
 
