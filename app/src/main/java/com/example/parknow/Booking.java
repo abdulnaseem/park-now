@@ -3,6 +3,9 @@ package com.example.parknow;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
@@ -29,17 +32,21 @@ public class Booking extends AppCompatActivity {
 
     BookingDatabase myDb;
 
-    EditText selectDate;
-    EditText leavingDate;
-    EditText selArrTime;
-    EditText selLeavTime;
-    TextView duration;
-    TextView price;
+    EditText selectDate;//arrive date
+    EditText leavingDate;//leaving date
+    EditText selArrTime;//arrive time
+    EditText selLeavTime;//leaving time
+    TextView duration;//total duration
+    TextView price;//total price
+
+    EditText vehReg;//vehicle registration number
 
     Calendar c;
     DatePickerDialog datePickerDialog;
     int year, month, day;
     private int hour, min, hourFinal, minFinal;
+
+    //globalise the variables
 
     String start_time;
     String end_time;
@@ -69,6 +76,10 @@ public class Booking extends AppCompatActivity {
         duration = (TextView) findViewById(R.id.duration);
         price = (TextView) findViewById(R.id.price);
 
+        vehReg = findViewById(R.id.vehReg);
+        InputFilter[] filterArray = new InputFilter[1];
+        filterArray[0] = new InputFilter.LengthFilter(12);
+        vehReg.setFilters(filterArray);
 
         //SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         //date = new Date();
