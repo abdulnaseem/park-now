@@ -20,8 +20,6 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return new info();
             case 1:
-                return new reviews();
-            case 2:
                 return new help();
             default:
                 return null;

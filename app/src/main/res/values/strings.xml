@@ -5,7 +5,7 @@
     <string name="leaving_button">Leaving</string>
     <string name="info">Information</string>
     <string name="reviews">Reviews</string>
-    <string name="help">Help</string>
+    <string name="help">How it works?</string>
     <string name="reserve">Reserve</string>
     <string name="booking_actionbar">Secure Checkout</string>
     <string name="pay">Pay and Reserve</string>
@@ -21,6 +21,25 @@
     <string name="total_price">Total Price</string>
     <string name="sign_in"><u>Sign in</u></string>
     <string name="sign_up"><u>Sign up</u></string>
+
+    <string name="one_help">
+        <b>Post payment:</b>
+    </string>
+    <string name="line_break">
+        The app will navigate you back to the map where you will be directed to the chosen location.
+    </string>
+    <string name="notif">
+        The owner of the parking space will receive a notification via text or email.
+    </string>
+    <string name="ready_to_park">
+        You are now ready to park.
+    </string>
+    <string name="park_now">
+        <b>#PARKNOW</b>
+    </string>
+
+
+    <string name="title_activity_maps">Map</string>
 
 
 

@@ -29,7 +29,7 @@ public class SearchBooking extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         info = (TabItem) findViewById(R.id.info);
-        reviews = (TabItem) findViewById(R.id.reviews);
+        //reviews = (TabItem) findViewById(R.id.reviews);
         help = (TabItem) findViewById(R.id.help);
         viewPager = findViewById(R.id.viewpager);
 
