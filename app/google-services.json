@@ -1,100 +1,34 @@
 {
   "project_info": {
-    "project_number": "505261513012",
-    "firebase_url": "https://carparking-820fc.firebaseio.com",
-    "project_id": "carparking-820fc",
-    "storage_bucket": "carparking-820fc.appspot.com"
+    "project_number": "888974708288",
+    "firebase_url": "https://booking-4baa0.firebaseio.com/",
+    "project_id": "booking-4baa0",
+    "storage_bucket": "booking-4baa0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:505261513012:android:fcfc8320aa71742eb52d61",
-        "android_client_info": {
-          "package_name": "com.example.carparking"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD3ZGPgbKVw-AlT1AKJR20KFJwLcEHg1pI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:505261513012:android:d646e6e53d07826bb52d61",
+        "mobilesdk_app_id": "1:888974708288:android:57c68dd2695825430519a5",
         "android_client_info": {
           "package_name": "com.example.parknow"
         }
       },
       "oauth_client": [
         {
-          "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
+          "client_id": "888974708288-1bvb79rn82g3r79r7c7d82f9uhbu76tp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD3ZGPgbKVw-AlT1AKJR20KFJwLcEHg1pI"
+          "current_key": "AIzaSyAVnKHYH4zH5hBDeDCc8YsOIlsN3rQcAUA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:505261513012:android:bc7088f5e4ad70bdb52d61",
-        "android_client_info": {
-          "package_name": "com.example.userprofileui"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "505261513012-q7ivppv78cnam6iur95jguqeilad4vn9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.userprofileui",
-            "certificate_hash": "be74650faf02f3a618e5a56b59e25e28e910899a"
-          }
-        },
-        {
-          "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD3ZGPgbKVw-AlT1AKJR20KFJwLcEHg1pI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "505261513012-h4ggq040d99rjoogr6olk0r7ddq6hfuf.apps.googleusercontent.com",
+              "client_id": "888974708288-1bvb79rn82g3r79r7c7d82f9uhbu76tp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

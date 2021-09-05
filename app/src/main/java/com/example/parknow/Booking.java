@@ -2,6 +2,7 @@ package com.example.parknow;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -15,9 +16,17 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -26,6 +35,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class Booking extends AppCompatActivity {
@@ -40,6 +50,7 @@ public class Booking extends AppCompatActivity {
     TextView price;//total price
 
     EditText vehReg;//vehicle registration number
+    Button payRes;
 
     Calendar c;
     DatePickerDialog datePickerDialog;
@@ -57,6 +68,9 @@ public class Booking extends AppCompatActivity {
     long diffMinutes;
     long diffHours;
 
+    private DatabaseReference mRootRef;
+    //connects the app with database
+    DatabaseReference mConditionRef;
     protected void onCreate(Bundle savedInstanceState){
         setTheme(R.style.SplashTheme);
         super.onCreate(savedInstanceState);
@@ -81,6 +95,7 @@ public class Booking extends AppCompatActivity {
         filterArray[0] = new InputFilter.LengthFilter(12);
         vehReg.setFilters(filterArray);
 
+        payRes = (Button) findViewById(R.id.payRes);
         //SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         //date = new Date();
         //showDate.setText(currentDate.format(date));//show current date
@@ -213,8 +228,8 @@ public class Booking extends AppCompatActivity {
                         //Log.d("DURATION ", String.valueOf(diffHours));//TEST PRINT
                         //duration.setText(String.valueOf(dur_hour)+"h"+" "+ String.valueOf(dur_min)+"m");
 
-                        double pricePerHour = diffHours*1.2;
-                        double pricePerMin = diffMinutes * 0.017;
+                        double pricePerHour = diffHours*1.0;
+                        double pricePerMin = diffMinutes * 0.2;
                         double totalPrice = pricePerHour + pricePerMin;
 
                         //Log.d("PRICE ", String.valueOf(totalPrice));//TEST PRINT
@@ -230,6 +245,39 @@ public class Booking extends AppCompatActivity {
             }
         });
 
+        mRootRef = FirebaseDatabase.getInstance().getReference();
+
+        payRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String arrival_date = selectDate.getText().toString().trim();
+                String arrival_time = selArrTime.getText().toString().trim();
+                String leaving_date = leavingDate.getText().toString().trim();
+                String leaving_time = selLeavTime.getText().toString().trim();
+                String durat = duration.getText().toString().trim();
+                String pri = price.getText().toString().trim();
+                String veh = vehReg.getText().toString().trim();
+
+                HashMap<String, String> dataMap = new HashMap<String, String>();
+                dataMap.put("Arrival Date", arrival_date);
+                dataMap.put("Arrival Time", arrival_time);
+                dataMap.put("Leaving Date", leaving_date);
+                dataMap.put("Leaving Time", leaving_time);
+                dataMap.put("Duration", durat);
+                dataMap.put("Price", pri);
+                dataMap.put("Vehicle Registration", veh);
+
+                mRootRef.push().setValue(dataMap);
+
+
+                Toast.makeText(getApplicationContext(), "Payment Accepted", Toast.LENGTH_SHORT).show();
+
+               /* Intent postPayment = new Intent(Booking.this, MainActivity.class);
+                startActivity(postPayment);*/
+            }
+        });
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
@@ -240,6 +288,8 @@ public class Booking extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }

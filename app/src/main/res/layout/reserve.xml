@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#FFFFFF">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/payRes"
@@ -236,7 +236,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:padding="2dp"
-                android:background="#FFFFFF"
+                android:background="#F8F8FF"
                 android:textSize="15dp"
                 android:hint="  Number Plate" />
 

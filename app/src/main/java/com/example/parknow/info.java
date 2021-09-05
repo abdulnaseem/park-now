@@ -42,7 +42,6 @@ public class info extends Fragment {
     private void reservation(){
         Intent res = new Intent(getActivity().getApplication(), Booking.class);
         startActivity(res);
-
     }
 
 

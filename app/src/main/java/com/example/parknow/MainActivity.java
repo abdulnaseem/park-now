@@ -212,16 +212,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         //Place current location marker
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        /*MarkerOptions markerOptions = new MarkerOptions();
+        MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Search Here");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
-        mCurrLocationMarker = mMap.addMarker(markerOptions);*/
+        mCurrLocationMarker = mMap.addMarker(markerOptions);
         mMap.setOnMarkerClickListener(this);
-        mCurrLocationMarker = mMap.addMarker(new MarkerOptions()
+        /*mCurrLocationMarker = mMap.addMarker(new MarkerOptions()
                 .position(latLng)
                 .title("Search Here")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));*/
 
         //move map camera
         mMap.setMinZoomPreference(8.0f);
